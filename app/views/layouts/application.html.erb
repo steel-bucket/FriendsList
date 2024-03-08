@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <%= stylesheet_link_tag "materialize.min", media: "screen,projection", "data-turbo-track": "reload" %>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FriendsList</title>
+
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+
+  <%#= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+  <%= javascript_include_tag "materialize.min", "data-turbo-track": "reload" %>
+  <script type="text/javascript">
+      document.addEventListener('turbolinks:load', function() {
+          var elems = document.querySelectorAll('.dropdown-trigger');
+          var instances = M.Dropdown.init(elems);
+      });
+  </script>
+
+</head>
+<body>
+<%= render 'home/header' %>
+<div class="container">
+  <%= yield %>
+</div>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+<!--<!doctype html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">-->
+<!--  <link type="text/css" rel="stylesheet" href="app/assets/stylesheets/materialize.min.css" media="screen,projection"/>-->
+
+<!--  <meta charset="utf-8">-->
+<!--  <meta name="viewport" content="width=device-width, initial-scale=1">-->
+<!--  <title>FriendsList</title>-->
+
+<%#= csrf_meta_tags %>
+<%#= csp_meta_tag %>
+
+<%#= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+
+<!--</head>-->
+<!--<body>-->
+<%#= yield %>
+<!--</body>-->
+<!--</html>-->
+
+
+
+
+
+
+

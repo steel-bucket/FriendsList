@@ -1,0 +1,111 @@
+<!--<div class="row">-->
+<!--  <form class="col s12">-->
+<!--    <div class="row">-->
+<!--      <div class="input-field col s6">-->
+<!--        <input placeholder="Placeholder" id="first_name" type="text" class="validate">-->
+<!--        <label for="first_name">First Name</label>-->
+<!--      </div>-->
+<!--      <div class="input-field col s6">-->
+<!--        <input id="last_name" type="text" class="validate">-->
+<!--        <label for="last_name">Last Name</label>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="row">-->
+<!--      <div class="input-field col s12">-->
+<!--        <input disabled value="I am not editable" id="disabled" type="text" class="validate">-->
+<!--        <label for="disabled">Disabled</label>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="row">-->
+<!--      <div class="input-field col s12">-->
+<!--        <input id="password" type="password" class="validate">-->
+<!--        <label for="password">Password</label>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="row">-->
+<!--      <div class="input-field col s12">-->
+<!--        <input id="email" type="email" class="validate">-->
+<!--        <label for="email">Email</label>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="row">-->
+<!--      <div class="col s12">-->
+<!--        This is an inline input field:-->
+<!--        <div class="input-field inline">-->
+<!--          <input id="email_inline" type="email" class="validate">-->
+<!--          <label for="email_inline">Email</label>-->
+<!--          <span class="helper-text" data-error="wrong" data-success="right">Helper text</span>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </form>-->
+<!--</div>-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<p style="color: green"><%= notice %></p>
+
+
+
+
+<%= form_with(model: friend) do |form| %>
+  <% if friend.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(friend.errors.count, "error") %> prohibited this friend from being saved:</h2>
+
+      <ul>
+        <% friend.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="input-field ">
+    <%= form.label :first_name, style: "display: block" %>
+    <%= form.text_field :first_name %>
+  </div>
+
+  <div class="input-field">
+    <%= form.label :last_name, style: "display: block" %>
+    <%= form.text_field :last_name %>
+  </div>
+
+  <div class="input-field">
+    <%= form.label :email, style: "display: block" %>
+    <%= form.text_field :email %>
+
+  </div>
+
+  <div class="input-field">
+    <%= form.label :phone, style: "display: block" %>
+    <%= form.number_field :phone %>
+  </div>
+
+  <div class="input-field">
+    <%= form.label :social_media, style: "display: block" %>
+    <%= form.text_field :social_media %>
+  </div>
+  <div class="input-field">
+    <%= form.number_field :user_id, value: current_user.id, id: :friend_user_id, type: :hidden %>
+  </div>
+
+  <div>
+    <%= form.submit class: "btn btn-flat blue waves-effect waves-light white_text" %>
+  </div>
+
+<% end %>

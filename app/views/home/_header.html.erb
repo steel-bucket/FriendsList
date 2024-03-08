@@ -1,0 +1,56 @@
+
+<!--<nav>-->
+<!--  <div class="nav-wrapper pink">-->
+<%#= link_to "Home", root_path, class: "brand-logo" %>
+<!--    <ul class="left hide-on-med-and-down">-->
+<%#= link_to "About", home_about_path %>
+<%#= link_to "Friends", friends_path %>
+<%#= link_to "Add Friend", new_friend_path %>
+<%# if user_signed_in? %>
+<%#= link_to "Log Out", destroy_user_session_path, method: :delete %>
+<%#= link_to "Edit Profile", edit_user_registration_path %>
+<%# else %>
+<%#= link_to "Log In", new_user_session_path %>
+<%#= link_to "Sign Up", new_user_registration_path %>
+<%# end %>
+<!--    </ul>-->
+<!--  </div>-->
+<!--</nav>-->
+
+
+
+
+
+
+<nav>
+  <div class="nav-wrapper pink">
+    <%= link_to "Home", root_path, class: "brand-logo" %>
+    <ul class="right hide-on-med-and-down">
+      <%= link_to "About", home_about_path %>
+    </ul>
+    <ul class="right hide-on-med-and-down">
+      <%= link_to "Friends", friends_path %>
+    </ul>
+
+    <% if user_signed_in? %>
+      <ul class="right hide-on-med-and-down">
+        <%= link_to "Add Friend", new_friend_path %>
+      </ul>
+
+      <ul class="right hide-on-med-and-down">
+        <%= link_to "Log Out", destroy_user_session_path, method: :delete %>
+      </ul>
+      <ul class="right hide-on-med-and-down">
+        <%= link_to "Edit Profile", edit_user_registration_path %>
+      </ul>
+    <% else %>
+      <ul class="right hide-on-med-and-down">
+        <%= link_to "Log In", new_user_session_path %>
+      </ul>
+      <ul class="right hide-on-med-and-down">
+        <%= link_to "Sign Up", new_user_registration_path %>
+      </ul>
+    <% end %>
+
+  </div>
+</nav>
